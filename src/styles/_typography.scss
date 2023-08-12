@@ -1,0 +1,58 @@
+@import "variables";
+
+h1.#{$ns}-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+}
+
+h2.#{$ns}-heading {
+    font-size: 1.3125rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    letter-spacing: '0.03125rem'
+}
+
+h3.#{$ns}-heading {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+}
+
+.#{$ns}-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+}
+
+.#{$ns}-body-large {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.#{$ns}-body-regular {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+a.#{$ns}-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+    text-decoration: 'underline';
+}
+
+a.#{$ns}-link-small {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-decoration: 'underline';
+}
+
+.#{$ns}-caption {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}

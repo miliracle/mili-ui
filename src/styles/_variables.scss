@@ -1,0 +1,23 @@
+// ns = namespace
+$ns: mili;
+$primary-color: #121958;
+$secondary-color: #B80646;
+$background-color: #F8F8FA;
+$light-grey: #EBEDF5;
+$green: #25BA18;
+$yellow: #FFBB0E;
+$red: #FE2525;
+$expired-color: rgba(0,0,0,0.3);
+$blue: #293BDD;
+// see https://bitsofco.de/the-new-system-font-stack/
+$font-family: -apple-system,
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Roboto",
+            "Oxygen",
+            "Ubuntu",
+            "Cantarell",
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif,
+            "Inter";

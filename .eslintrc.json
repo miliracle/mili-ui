@@ -1,0 +1,26 @@
+{
+    "root": true,
+    "env": {
+      "jest": true
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "extends": ["standard", "plugin:react/recommended"],
+    "rules": {
+      "no-unused-vars": [
+        2,
+        {
+          "args": "all",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "no-warning-comments": 0
+    }
+  }

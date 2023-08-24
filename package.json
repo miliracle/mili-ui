@@ -2,16 +2,25 @@
   "name": "mili-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier-standard 'src/**/*.ts'",
+    "precommit": "lint-staged",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "miliracle",
   "license": "ISC",
   "devDependencies": {
+    "classnames": "^2.3.2",
+    "eslint": "^8.47.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier-standard": "^16.4.1",
     "react": "^18.2.0"
   },
   "peerDependencies": {
+    "classnames": "^2.3.2",
     "react": "^18.2.0"
   }
 }

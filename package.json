@@ -2,6 +2,22 @@
   "name": "mili-ui",
   "version": "1.0.0",
   "description": "",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
+    }
+  },
   "scripts": {
     "format": "prettier-standard 'src/**/*.ts'",
     "precommit": "lint-staged",
@@ -9,7 +25,16 @@
     "lint:fix": "eslint . --fix",
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "dev": "npm-watch"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "./src/*"
+      ],
+      "extensions": "css, scss, tsx, ts"
+    }
   },
   "author": "miliracle",
   "license": "ISC",
@@ -29,13 +54,16 @@
     "eslint-plugin-typescript": "^0.14.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
+    "npm-watch": "^0.11.0",
     "prettier-standard": "^16.4.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.3.2",
+    "sass": "^1.66.1",
+    "storybook": "^7.4.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.3"
   },
   "peerDependencies": {
     "classnames": "^2.3.2",

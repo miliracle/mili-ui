@@ -1,0 +1,50 @@
+{/* Typography.mdx */}
+
+import { Meta, Typeset, Canvas, Story } from '@storybook/blocks';
+import * as Typography from './typography.stories.tsx'
+
+<Meta title="Components/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  size: {
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48,
+  },
+};
+
+# Typography
+
+**Font:** Inter
+
+<Canvas>
+  <Story of={Typography.Example}>
+  </Story>
+</Canvas>
+
+```html
+<h1 class="mili-heading {{.modifier}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+<h2 class="mili-heading {{.modifier}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+<h3 class="mili-heading {{.modifier}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+<p className='mili-subtitle'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<p className='mili-body-large'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<p className='mili-body-regular'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<p className='mili-caption'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<a className='mili-link'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+<a className='mili-link-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+```

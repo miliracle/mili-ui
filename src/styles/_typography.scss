@@ -1,5 +1,9 @@
 @import "variables";
 
+* {
+    font-family: $font-family;
+}
+
 h1.#{$ns}-heading {
     font-size: 1.75rem;
     font-weight: 600;
@@ -41,14 +45,14 @@ a.#{$ns}-link {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.125rem;
-    text-decoration: 'underline';
+    text-decoration: underline;
 }
 
 a.#{$ns}-link-small {
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.25rem;
-    text-decoration: 'underline';
+    text-decoration: underline;
 }
 
 .#{$ns}-caption {

@@ -2,7 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Components/Typography',
+  title: 'Core/Typography',
   parameters: {
     layout: 'centered',
   }

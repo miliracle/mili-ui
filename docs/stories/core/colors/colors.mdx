@@ -1,0 +1,63 @@
+{/* Colors.mdx */}
+
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Core/Colors" />
+
+# Colors
+
+<ColorPalette>
+    <ColorItem
+        title="Primary"
+        subtitle="$primary-color"
+        colors={{ Primary: '#121958' }}
+    />
+    <ColorItem
+        title="Secondary"
+        subtitle="$secondary-color"
+        colors={{ Primary: '#B80646' }}
+    />
+    <ColorItem
+        title="Background"
+        subtitle="$background-color"
+        colors={{ Primary: '#F8F8FA' }}
+    />
+    <ColorItem
+        title="Light Grey"
+        subtitle="$light-grey"
+        colors={{ Primary: '#EBEDF5' }}
+    />
+    <ColorItem
+        title="Green"
+        subtitle="$green"
+        colors={{ Primary: '#25BA18' }}
+    />
+    <ColorItem
+        title="Yellow"
+        subtitle="$yellow"
+        colors={{ Primary: '#FFBB0E' }}
+    />
+    <ColorItem
+        title="Red"
+        subtitle="$red"
+        colors={{ Primary: '#FE2525' }}
+    />
+    <ColorItem
+        title="Expired Color"
+        subtitle="$expired-color"
+        colors={{ Primary: 'rgba(0,0,0,0.3)' }}
+    />
+    <ColorItem
+        title="Blue"
+        subtitle="$blue"
+        colors={{ Primary: '#293BDD' }}
+    />
+</ColorPalette>
+
+# Usage
+
+```jsx
+import { Colors } from "@blueprintjs/core";
+
+<div style={{ color: Colors.BLUE3, background: Colors.BLACK }} />
+```

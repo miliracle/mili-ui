@@ -4,6 +4,7 @@ import dts from "vite-plugin-dts";
 import { fileURLToPath } from 'node:url';
 
 export default defineConfig ({
+  publicDir: "src/styles",
   plugins: [
     dts({
       insertTypesEntry: true,

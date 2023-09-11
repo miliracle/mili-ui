@@ -2,16 +2,22 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { fileURLToPath } from 'node:url';
+import copy from 'rollup-plugin-copy';
 
 export default defineConfig ({
-  publicDir: "src/styles",
   plugins: [
+    copy({
+      targets: [
+        { src: 'src/styles/_variables.scss', dest: 'dist/lib/scss' }
+      ],
+      hook: 'writeBundle'
+    }),
     dts({
       insertTypesEntry: true,
       exclude: [
         "docs"
       ]
-    }),
+    })
   ],
   build: {
     lib: {

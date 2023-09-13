@@ -32,7 +32,8 @@ const styles = {
 
 export const Example = () => {
   return (
-    <div style={styles.table}>
+    <div className='mili'>
+      <div style={styles.table}>
       <div style={styles.row}>
         <div style={styles.cell1}>
           <h1 className='mili-heading'>H1</h1>
@@ -105,6 +106,7 @@ export const Example = () => {
           <p><a className='mili-link-small'>{content}</a></p>
         </div>
       </div>
+    </div>
     </div>
   )
 };

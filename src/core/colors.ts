@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
     PRIMARY: '#121958',
     SECONDARY: '#B80646',
     LIGHT_GREY: '#EBEDF5',
@@ -10,3 +10,5 @@ export const Colors = {
     EXPIRED: 'rgba(0,0,0,0.3)',
     BLUE: '#293BDD'
 }
+
+export default Colors

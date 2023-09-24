@@ -26,7 +26,8 @@
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "optimize-icons": "svgo src/resources/icons -o src/resources/icons/min"
   },
   "watch": {
     "build": {
@@ -48,10 +49,13 @@
     "@storybook/react-vite": "^7.3.2",
     "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.21",
+    "change-case": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
     "classnames": "^2.3.2",
     "eslint": "^8.47.0",
     "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-typescript": "^0.14.0",
+    "handlebars": "^4.7.8",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "npm-watch": "^0.11.0",
@@ -62,6 +66,7 @@
     "rollup-plugin-copy": "^3.5.0",
     "sass": "^1.66.1",
     "storybook": "^7.4.0",
+    "svgo": "^3.0.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.3"

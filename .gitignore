@@ -1,3 +1,6 @@
 /node_modules
 /dist
 /storybook-static
+/docs/example-app
+/src/resources/icons/min
+/src/resources/icons/components

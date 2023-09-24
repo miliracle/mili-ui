@@ -15,7 +15,7 @@ mkdirSync(generatedSrcDir, { recursive: true });
 Handlebars.registerHelper("pascalCase", iconName => pascalCase(iconName));
 
 const iconComponentTemplate = Handlebars.compile(readFileSync(resolve(scriptsDir, "iconComponent.tsx.hbs"), 'utf8'));
-
+const componentsIndexTemplate = Handlebars.compile(readFileSync(resolve(scriptsDir, "index.ts.hbs"), "utf8"));
 
 function getListSVGIcons() {
   const iconsDir = resolve(srcDir, "resources/icons/min");
@@ -23,14 +23,8 @@ function getListSVGIcons() {
   return icons;
 }
 
-function getSVGContent(parsedSVG) {
-    const svg = parsedSVG.children.find(child => child.tagName === "svg");
-    const svgContent = svg.children;
-    return svgContent;
-}
-
 const listSVGIcons = getListSVGIcons();
-for(const [index, icon] of listSVGIcons.entries()) {
+for(const icon of listSVGIcons) {
     const iconPath = resolve(srcDir, "resources/icons/min", icon);
     const iconName = pascalCase(icon.replace(".svg", ""));
     const svgFile = readFileSync(iconPath, 'utf8');
@@ -48,3 +42,9 @@ for(const [index, icon] of listSVGIcons.entries()) {
     );
 }
 
+writeFileSync(
+    join(generatedSrcDir, `index.ts`),
+    componentsIndexTemplate({
+        iconNames: listSVGIcons.map(icon => pascalCase(icon.replace(".svg", "")))
+    }),
+);

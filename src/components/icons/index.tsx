@@ -1,5 +1,2 @@
-import Accept from "./Accept"
-import { IconSize } from "./IconTypes"
-
-const Icons = {Accept, IconSize}
-export default Icons
+export { IconSize } from "./IconTypes"
+export * from './generated'

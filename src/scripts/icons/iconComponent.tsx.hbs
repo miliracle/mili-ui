@@ -4,7 +4,7 @@ import IconProps from "../iconProps";
 import { IconSize } from "../IconTypes";
 import { Colors } from "../../../core";
 
-const {{pascalCase iconName}}: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: React.Ref<SVGSVGElement>) => {
+export const {{pascalCase iconName}}: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: React.Ref<SVGSVGElement>) => {
   return (
     <SVGContainer {...props} ref={ref}>
         {{{svgContent}}}
@@ -19,5 +19,3 @@ const {{pascalCase iconName}}: React.FC<IconProps> = React.forwardRef((props: Ic
     size: IconSize.STANDARD,
     color: Colors.PRIMARY
 };
-
-export default {{pascalCase iconName}};

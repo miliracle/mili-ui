@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { load } from 'cheerio'
 
 const scriptsDir = fileURLToPath(new URL(".", import.meta.url));
-const srcDir = resolve("../../../src");
+const srcDir = resolve("./src");
 const generatedSrcDir = resolve(srcDir, "components/icons/generated");
 
 

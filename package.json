@@ -23,11 +23,12 @@
     "precommit": "lint-staged",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "watch": "npm-watch",
-    "optimize-icons": "svgo src/resources/icons -o src/resources/icons/min"
+    "optimize-icons": "svgo src/resources/icons -o src/resources/icons/min",
+    "generate-icon-src": "npm run optimize-icons && node src/scripts/icons/generate-icon-components.mjs",
+    "build": "npm run generate-icon-src && vite build"
   },
   "watch": {
     "build": {

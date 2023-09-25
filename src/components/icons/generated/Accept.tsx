@@ -4,7 +4,7 @@ import IconProps from "../iconProps";
 import { IconSize } from "../IconTypes";
 import { Colors } from "../../../core";
 
-export const Accept: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: React.Ref<SVGSVGElement>) => {
+const Accept: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: React.Ref<SVGSVGElement>) => {
   return (
     <SVGContainer {...props} ref={ref}>
         <g clip-path="url(#a)">
@@ -31,3 +31,5 @@ Accept.defaultProps = {
     size: IconSize.STANDARD,
     color: Colors.PRIMARY
 };
+
+export default Accept;

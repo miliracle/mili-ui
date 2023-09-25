@@ -1,3 +1,9 @@
 {{#each iconNames}}
-export { {{pascalCase this}} } from "./{{this}}";
+import {{pascalCase this}} from "./{{this}}";
 {{/each}}
+
+export {
+{{#each iconNames}}
+    {{pascalCase this}},
+{{/each}}
+};

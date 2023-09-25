@@ -1,2 +1,2 @@
 export { IconSize } from "./IconTypes"
-export * from './generated'
+export * as Icons from './generated'

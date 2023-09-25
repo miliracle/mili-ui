@@ -23,7 +23,6 @@ export default defineConfig ({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "mili-ui",
-   		 
       fileName: "index",
     },
     rollupOptions: {

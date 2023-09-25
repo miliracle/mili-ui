@@ -1,8 +1,12 @@
 import './styles/mili.scss'
 import { Card } from './components/card'
-import { Colors } from './core/colors'
+import {Icons, IconSize} from './components/icons'
+import { Colors, Classes } from './core'
 
 export {
     Card,
-    Colors
+    Icons,
+    IconSize,
+    Colors,
+    Classes
 }

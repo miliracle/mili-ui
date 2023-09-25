@@ -1,0 +1,23 @@
+import React from "react";
+import SVGContainer from "../svgContainer";
+import IconProps from "../iconProps";
+import { IconSize } from "../IconTypes";
+import { Colors } from "../../../core";
+
+const {{pascalCase iconName}}: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: React.Ref<SVGSVGElement>) => {
+  return (
+    <SVGContainer {...props} ref={ref}>
+        {{{svgContent}}}
+    </SVGContainer>
+  )
+});
+
+{{pascalCase iconName}}.displayName = `Mili.Icon.{{pascalCase iconName}}`;
+
+{{pascalCase iconName}}.defaultProps = {
+    viewBox: "0 0 20 20",
+    size: IconSize.STANDARD,
+    color: Colors.PRIMARY
+};
+
+export default {{pascalCase iconName}};

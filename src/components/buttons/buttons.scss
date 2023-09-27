@@ -1,0 +1,74 @@
+@import "../../styles/variables";
+
+.#{$ns}-button {
+    display: flex;
+    padding: 0.6875rem 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    // border: 1px solid var(--Primary-Blue, #121958);
+    // background-color: white;
+    // text button
+    color: $primary-color;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem; 
+}
+
+.#{$ns}-button--primary {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+
+    &:hover {
+        background: $primary3-color;
+    }
+
+    &:active {
+        background: $primary2-color;
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.#{$ns}-button--secondary {
+    background-color: white;
+    color: $primary-color;
+    border: none;
+
+    &:hover {
+        background: $primary3-color;
+    }
+
+    &:active {
+        background: $primary2-color;
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.#{$ns}-button--tertiary {
+    background-color: white;
+    color: $primary-color;
+    border: none;
+
+    &:hover {
+        background: $primary3-color;
+    }
+
+    &:active {
+        background: $primary2-color;
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}

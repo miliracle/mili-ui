@@ -2,19 +2,14 @@ import React from "react";
 import cx from "classnames";
 import "./buttons.scss"
 import { Classes } from "../../core";
-
-const ButtonType = {
-    PRIMARY: "primary" as "primary",
-    SECONDARY: "secondary" as "secondary",
-    TERTIARY: "tertiary" as "tertiary",
-};
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-type ButtonType = (typeof ButtonType)[keyof typeof ButtonType];
+import ButtonType from "./buttonTypes";
 
 interface CommonButtonProps {
     disabled?: boolean,
-    buttonType: ButtonType,
-
+    buttonType?: ButtonType,
+    leftIcon?: JSX.Element | false | null | undefined,
+    rightIcon?: JSX.Element | false | null | undefined,
+    loading?: boolean,
 }
 
 interface ButtonProps extends CommonButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,7 +19,7 @@ interface ButtonProps extends CommonButtonProps, React.ButtonHTMLAttributes<HTML
 type Ref = HTMLButtonElement
 
 const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props, ref) => {
-    const { disabled, buttonType, ...restProps } = props
+    const { disabled, buttonType, leftIcon, rightIcon, children, ...restProps } = props
     const buttonClasses = [Classes.BUTTON]
 
     if(buttonType === ButtonType.PRIMARY) {
@@ -33,8 +28,17 @@ const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props,
         buttonClasses.push(Classes.BUTTON_SECONDARY)
     } else if(buttonType === ButtonType.TERTIARY) {
         buttonClasses.push(Classes.BUTTON_TERTIARY)
+    } else if(buttonType === ButtonType.TEXT) {
+        buttonClasses.push(Classes.BUTTON_TEXT)
     }
     
+    if(leftIcon || !children) {
+        buttonClasses.push(Classes.BUTTON_LEFT_ICON)
+    }
+    if(rightIcon || !children) {
+        buttonClasses.push(Classes.BUTTON_RIGHT_ICON)
+    }
+
     return (
         <button 
             ref={ref}
@@ -42,13 +46,17 @@ const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props,
             className={cx(buttonClasses)}
             {...restProps}
         >
-            {props.children}
+            {leftIcon}
+            {children}
+            {rightIcon}
         </button>
     )
 })
 
 Button.defaultProps = {
-    buttonType: ButtonType.PRIMARY,
+    buttonType: ButtonType.NONE,
+    loading: false,
+    disabled: false,
 }
 
 Button.displayName = `Mili.Button`;

@@ -1,5 +1,5 @@
 import './styles/mili.scss'
-import { Button } from './components/buttons'
+import { Button, ButtonType } from './components/buttons'
 import { Icons, IconSize } from './components/icons'
 import { Colors, Classes } from './core'
 
@@ -9,4 +9,5 @@ export {
     Icons,
     IconSize,
     Button,
+    ButtonType,
 }

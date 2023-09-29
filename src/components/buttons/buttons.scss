@@ -6,14 +6,37 @@
     align-items: center;
     gap: 0.5rem;
     border-radius: 0.25rem;
-    // border: 1px solid var(--Primary-Blue, #121958);
-    // background-color: white;
+    cursor: pointer;
     // text button
     color: $primary-color;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.125rem; 
+    line-height: 1.125rem;
+    // style for buttonType = NONE
+    background-color: white;
+    color: $primary-color;
+    border: 1px solid $stroke-color;
+    &:hover {
+        background: $light-grey3;
+    }
+
+    &:active {
+        background: $light-grey2;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+.#{$ns}-button--left-icon {
+    padding-left: 0.6875rem;
+}
+
+.#{$ns}-button--right-icon {
+    padding-right: 0.6875rem;
 }
 
 .#{$ns}-button--primary {
@@ -36,16 +59,30 @@
 }
 
 .#{$ns}-button--secondary {
-    background-color: white;
+    border: 1px solid $primary-color;
+}
+
+.#{$ns}-button--tertiary {
+    padding: 0.6875rem 1.25rem;
+    background-color: $light-grey;
     color: $primary-color;
-    border: none;
+    border: 1px solid $stroke-color;
+
+    &.#{$ns}-button--left-icon {
+        padding-left: 0.6875rem;
+    }
+    
+    &.#{$ns}-button--right-icon {
+        padding-right: 0.6875rem;
+    }
+    
 
     &:hover {
-        background: $primary3-color;
+        background: $tertiary-btn-hover-bg;
     }
 
     &:active {
-        background: $primary2-color;
+        background: $tertiary-btn-active-bg;
     }
 
     &:disabled {
@@ -54,17 +91,18 @@
     }
 }
 
-.#{$ns}-button--tertiary {
-    background-color: white;
-    color: $primary-color;
+.#{$ns}-button--text {
+    padding: 0.25rem;
     border: none;
 
     &:hover {
-        background: $primary3-color;
+        background-color: transparent;
+        color: $primary3-color;
     }
 
     &:active {
-        background: $primary2-color;
+        background: transparent;
+        color: $primary2-color;
     }
 
     &:disabled {

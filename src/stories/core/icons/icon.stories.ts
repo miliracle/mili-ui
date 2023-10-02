@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Colors, IconSize, Icons } from '../../../../src';
+import { IconSize, Icons } from '../../../components/icons';
+import { Colors } from '../../../core';
 
 const meta = {
   title: 'Core/Icons/Icon',

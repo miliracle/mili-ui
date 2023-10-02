@@ -1,25 +1,25 @@
-import React from "react";
+import React, { RefObject, useEffect } from "react";
+import {useButton, AriaButtonProps} from '@react-aria/button';
 import cx from "classnames";
 import "./buttons.scss"
 import { Classes } from "../../core";
 import ButtonType from "./buttonTypes";
 
-interface CommonButtonProps {
-    disabled?: boolean,
+
+interface ButtonProps extends AriaButtonProps {
     buttonType?: ButtonType,
     leftIcon?: JSX.Element | false | null | undefined,
     rightIcon?: JSX.Element | false | null | undefined,
-    loading?: boolean,
-}
-
-interface ButtonProps extends CommonButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
-    type?: 'button' | 'submit' | 'reset'
 }
 
 type Ref = HTMLButtonElement
 
 const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props, ref) => {
-    const { disabled, buttonType, leftIcon, rightIcon, children, ...restProps } = props
+    const { buttonType, leftIcon, rightIcon, children } = props
+    const { buttonProps } = useButton(props, ref as RefObject<HTMLButtonElement>)
+    useEffect(() => {
+        console.log('buttonProps', buttonProps)
+    }, [buttonProps])
     const buttonClasses = [Classes.BUTTON]
 
     if(buttonType === ButtonType.PRIMARY) {
@@ -41,10 +41,9 @@ const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props,
 
     return (
         <button 
-            ref={ref}
-            disabled={disabled}
             className={cx(buttonClasses)}
-            {...restProps}
+            {...buttonProps}
+            ref={ref}
         >
             {leftIcon}
             {children}
@@ -55,8 +54,6 @@ const Button: React.FC<ButtonProps> = React.forwardRef<Ref, ButtonProps>((props,
 
 Button.defaultProps = {
     buttonType: ButtonType.NONE,
-    loading: false,
-    disabled: false,
 }
 
 Button.displayName = `Mili.Button`;

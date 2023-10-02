@@ -2,24 +2,21 @@
   "name": "mili-ui",
   "version": "1.0.0",
   "description": "",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "/index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.umd.cjs"
+      "import": "./index.mjs",
+      "require": "./index.umd.cjs"
     },
     "./*.css": {
-      "import": "./dist/*.css",
-      "require": "./dist/*.css"
+      "import": "./*.css",
+      "require": "./*.css"
     }
   },
   "scripts": {
-    "format": "prettier-standard 'src/**/*.ts'",
+    "format": "prettier-standard './**/*.ts'",
     "precommit": "lint-staged",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -27,15 +24,22 @@
     "build-storybook": "storybook build",
     "watch": "npm-watch",
     "optimize-icons": "svgo resources/icons -o resources/icons/min",
-    "generate-icon-src": "npm run optimize-icons && node src/scripts/icons/generate-icon-components.mjs",
+    "generate-icon-src": "npm run optimize-icons && node scripts/icons/generate-icon-components.mjs",
     "build": "vite build"
   },
   "watch": {
     "build": {
       "patterns": [
-        "./src/*"
+        "./*"
       ],
-      "extensions": "css, scss, tsx, ts"
+      "extensions": "css, scss, tsx, ts",
+      "exclude": [
+        "node_modules/**",
+        ".storybook/**",
+        "scripts/**",
+        "resources/**",
+        "stories/**"
+      ]
     }
   },
   "author": "miliracle",
@@ -63,6 +67,7 @@
     "prettier-standard": "^16.4.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-aria": "^3.29.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-copy": "^3.5.0",
     "sass": "^1.66.1",
@@ -74,7 +79,9 @@
   },
   "peerDependencies": {
     "classnames": "^2.3.2",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "normalize.css": "^8.0.1"
+    "react-dom": "^18.2.0",
+    "react-aria": "^3.29.0"
   }
 }

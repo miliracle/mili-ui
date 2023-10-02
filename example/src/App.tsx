@@ -5,7 +5,7 @@ import "./App.css"
 function App() {
   return (
     <div className='mili app'>
-      <Button buttonType={ButtonType.PRIMARY}>
+      <Button buttonType={ButtonType.PRIMARY} onPress={() => alert('xxx')}>
         Button text
       </Button>
       <Button buttonType={ButtonType.SECONDARY} leftIcon={<Icons.Accept />}>

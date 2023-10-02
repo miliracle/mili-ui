@@ -1,6 +1,6 @@
 {
-    "include": ["src", "@types", "docs/stories", "docs/stories"],
-    "exclude": ["src/__tests__"],
+    "include": ["@types", "components", "core", "theme", "utils", "index.ts"],
+    "exclude": ["__tests__", "scripts", "node_modules", "stories"],
     "compilerOptions": {
       /* Visit https://aka.ms/tsconfig.json to read more about this file */
   

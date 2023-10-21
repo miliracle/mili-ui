@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { Button, ButtonType } from '../../../components/buttons';
 import { Icons } from '../../../components/icons';
@@ -17,68 +18,86 @@ const meta = {
   ],
   parameters: {
     layout: 'centered',
-  },
+    actions: { argTypesRegex: '^on.*' }  },
   tags: ['autodocs'],
   argTypes: {
-    leftIcon: {
+    buttonType: {
       control: {
-        disable: true,
+        type: 'select',
+        options: [
+          ButtonType.NONE,
+          ButtonType.PRIMARY,
+          ButtonType.SECONDARY,
+          ButtonType.TERTIARY,
+          ButtonType.TEXT,
+        ],
+        default: ButtonType.NONE,
       },
+      description: 'The type of button to render.',
+    },
+    leftIcon: {
+      control: { type: 'boolean' },
+      mapping: { false: '', true: <Icons.Accept color='white'/> },
+      description: 'The icon to render on the left side of the button.',
     },
     rightIcon: {
-      control: {
-        disable: true,
-      },
+      control: { type: 'boolean' },
+      mapping: { false: '', true: <Icons.Accept color='white'/> },
+      description: 'The icon to render on the right side of the button.',
     },
+    autoFocus: { type: 'boolean', description: 'Whether the element should receive focus on render.' },
+    children: {
+      description: 'The content to render inside the button.',
+    },
+    onPress: {
+      description: 'Handler that is called when the press is released over the target.',
+    },
+    onPressStart: {
+      description: 'Handler that is called when a press interaction starts.',
+    },
+    onPressEnd: {
+      description: 'Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.'
+    },
+    onPressChange: {
+      description: 'Handler that is called when the press state changes.',
+    },
+    onPressUp: {
+      description: 'Handler that is called when a press is released over the target, regardless of whether it started on the target or not.'
+    },
+    onFocus: { description: 'Handler that is called when the element receives focus.' },
+    onBlur: { description: 'Handler that is called when the element loses focus.' },
+    onFocusChange: { description: 'Handler that is called when the focus state changes.' },
+    onKeyDown: { description: 'Handler that is called when a key is pressed down.' },
+    onKeyUp: { description: 'Handler that is called when a key is released.' },
   }
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+const commonArgs = {
+  children: 'Button text',
+  onPress(e) {
+    action('onPress')(e);
+  },
+  onPressStart(e) {
+    action('onPressStart')(e);    
+  },
+  onPressEnd(e) {
+    action('onPressEnd')(e);    
+  },
+  onPressChange(isPressed) {
+    action('onPressChange')(isPressed);
+  },
+  onPressUp(e) {
+    action('onPressUp')(e);    
+  }
+};
+
+export const Example: Story = {
   args: {
     buttonType: ButtonType.PRIMARY,
-    children: 'Button text',
     isDisabled: false,
-    onPress: () => alert('Button pressed!'),
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    buttonType: ButtonType.SECONDARY,
-    children: 'Button text',
-    leftIcon: <Icons.Accept />,
-    isDisabled: false,
-    onPress: () => alert('Button pressed!'),
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    buttonType: ButtonType.TERTIARY,
-    children: 'Button text',
-    isDisabled: false,
-    onPress: () => alert('Button pressed!'),
-  },
-};
-
-export const Text: Story = {
-  args: {
-    buttonType: ButtonType.TEXT,
-    children: 'Button text',
-    rightIcon: <Icons.Accept />,
-    isDisabled: false,
-    onPress: () => alert('Button pressed!'),
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    buttonType: ButtonType.PRIMARY,
-    children: 'Button text',
-    isDisabled: true,
-    onPress: () => alert('Button pressed!'),
+    ...commonArgs,
   },
 };

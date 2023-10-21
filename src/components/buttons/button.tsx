@@ -6,7 +6,7 @@ import { Classes } from "../../core";
 import ButtonType from "./buttonTypes";
 
 
-interface ButtonProps extends AriaButtonProps {
+export interface ButtonProps extends AriaButtonProps {
     buttonType?: ButtonType,
     leftIcon?: JSX.Element | false | null | undefined,
     rightIcon?: JSX.Element | false | null | undefined,

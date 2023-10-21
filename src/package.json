@@ -45,6 +45,7 @@
   "author": "miliracle",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.4.6",
     "@storybook/addon-essentials": "^7.3.2",
     "@storybook/addon-interactions": "^7.3.2",
     "@storybook/addon-links": "^7.3.2",
@@ -81,7 +82,7 @@
     "classnames": "^2.3.2",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-aria": "^3.29.0"
+    "react-aria": "^3.29.0",
+    "react-dom": "^18.2.0"
   }
 }

@@ -1,8 +1,9 @@
 
-import Button from './button'
+import {Button, AnchorButton} from './buttons'
 import ButtonType from './buttonTypes'
 
 export {
   Button,
-  ButtonType
+  ButtonType,
+  AnchorButton
 }

@@ -26,7 +26,7 @@
         background: $light-grey2;
     }
 
-    &:disabled {
+    &:disabled, &.#{$ns}-disabled {
         opacity: 0.4;
         cursor: not-allowed;
     }
@@ -53,7 +53,7 @@
         background: $primary2-color;
     }
 
-    &:disabled {
+    &:disabled, &.#{$ns}-disabled {
         opacity: 0.3;
         cursor: not-allowed;
     }
@@ -86,7 +86,7 @@
         background: $tertiary-btn-active-bg;
     }
 
-    &:disabled {
+    &:disabled, &.#{$ns}-disabled {
         opacity: 0.3;
         cursor: not-allowed;
     }
@@ -106,7 +106,7 @@
         color: $primary2-color;
     }
 
-    &:disabled {
+    &:disabled, &.#{$ns}-disabled {
         opacity: 0.3;
         cursor: not-allowed;
     }

@@ -10,6 +10,10 @@ const TypoClasses = {
     LINK_SMALL: `${NS}-link-small`,
 }
 
+const CommonClasses = {
+    DISABLED: `${NS}-disabled`,
+}
+
 const ButtonClasses = {
     BUTTON: `${NS}-button`,
     BUTTON_PRIMARY: `${NS}-button--primary`,
@@ -23,7 +27,8 @@ const ButtonClasses = {
 const Classes = {
     ICON: `${NS}-icon`,
     ...TypoClasses,
-    ...ButtonClasses
+    ...ButtonClasses,
+    ...CommonClasses,
 }
 
 export default Classes;

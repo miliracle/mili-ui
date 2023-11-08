@@ -1,11 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import { AnchorButton, ButtonType } from '../../../components/buttons';
 import { Icons } from '../../../components/icons';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
   title: 'Components/Buttons/AnchorButton',
   component: AnchorButton,
@@ -35,6 +33,7 @@ const meta = {
       },
       description: 'The type of button to render.',
     },
+    isDisabled: { type: 'boolean', description: 'Whether the button is disabled.' },
     leftIcon: {
       control: { type: 'boolean' },
       mapping: { false: '', true: <Icons.Accept color='white'/> },

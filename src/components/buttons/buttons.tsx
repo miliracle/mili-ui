@@ -1,10 +1,9 @@
 import React, { RefObject } from "react";
 import {useButton, AriaButtonProps} from '@react-aria/button';
 import cx from "classnames";
-import "./buttons.scss"
 import { Classes } from "../../core";
 import ButtonType from "./buttonTypes";
-
+import "./buttons.scss"
 
 interface CommonButtonProps {
     buttonType?: ButtonType,
@@ -78,6 +77,10 @@ function useSharedButtonProps(props: ButtonProps) {
     }
     if(rightIcon || !children) {
         buttonClasses.push(Classes.BUTTON_RIGHT_ICON)
+    }
+
+    if(isDisabled) {
+        buttonClasses.push(Classes.DISABLED)
     }
 
     return {

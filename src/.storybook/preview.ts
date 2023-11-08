@@ -1,6 +1,7 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
 
-import '../src/styles/mili.scss';
+import '../styles/mili.scss';
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +12,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-  },
+  }
 };
 
 export default preview;

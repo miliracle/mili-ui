@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import type { Meta } from '@storybook/react';
-import { IconSize, Icons } from '../../../../src/components/icons';
-import { Classes } from '../../../../src';
+import { IconSize, Icons } from '../../../components/icons';
+import { Classes } from '../../../core';
 
 const meta = {
   title: 'Core/Icons',

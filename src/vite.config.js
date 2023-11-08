@@ -8,23 +8,28 @@ export default defineConfig ({
   plugins: [
     copy({
       targets: [
-        { src: 'src/styles/_variables.scss', dest: 'dist/lib/scss' }
+        { src: 'styles/_variables.scss', dest: '../dist/lib/scss' },
+        { src: 'package.json', dest: '../dist' }
       ],
       hook: 'writeBundle'
     }),
     dts({
       insertTypesEntry: true,
       exclude: [
-        "docs"
+        ".storybook",
+        "resources",
+        "scripts",
+        "stories",
       ]
     })
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve(__dirname, "index.ts"),
       name: "mili-ui",
       fileName: "index",
     },
+    outDir: "../dist",
     rollupOptions: {
       external: ["react", fileURLToPath(
         new URL(

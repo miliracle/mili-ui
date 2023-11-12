@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "main"
+      - "hotfix/cicd"
 permissions:
   contents: read
   pages: write
@@ -11,11 +12,27 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.build-publish.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
-      with:
-        path: src/storybook-static
-        build_command: cd src && npm run build-storybook
+      - name: Checkout if required
+        uses: actions/checkout@v3
+  
+      - name: 'Build'
+        shell: bash
+        run: |
+          echo "::group::Build"
+          cd src && npm ci
+          npm run build-storybook
+          echo "::endgroup::"
+  
+      - name: 'upload'
+        uses: actions/upload-pages-artifact@v1.0.4
+        with: 
+          path: src/storybook-static
+  
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        with:
+          token: ${{ github.token }}

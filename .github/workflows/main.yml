@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - "main"
-      - "hotfix/cicd"
 permissions:
   contents: read
   pages: write
@@ -15,7 +14,7 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout if required
+      - name: Checkout
         uses: actions/checkout@v3
   
       - name: 'Build'

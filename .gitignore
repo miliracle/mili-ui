@@ -1,6 +1,6 @@
-/src/node_modules
+/node_modules
 /dist
-/src/storybook-static
+/storybook-static
 /docs/example-app
 /src/resources/icons/min
 /src/resources/icons/components
